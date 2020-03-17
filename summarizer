@@ -1,0 +1,33 @@
+#iterate through each sentence and combine the weighted score of the underlying word
+sentence_scores = {}
+cnt = 0
+for sent in sentence_list:
+    sentence_scores[sent] = []
+    score = 0
+    for word in nltk.word_tokenize(sent.lower()):
+        if word in word_frequencies.keys():
+            if len(sent.split(' ')) < 30:
+                if sent not in sentence_scores.keys():
+                    score = word_frequencies[word]
+                else:
+                    score += word_frequencies[word]
+    sentence_scores[sent].append(score)
+    sentence_scores[sent].append(cnt)
+    cnt = cnt + 1
+
+
+#Sort the dictionary using the score in descending order and then index in ascending order
+#Getting the top 7 sentences
+#Putting them in 1 string variable
+from operator import itemgetter
+top7 = dict(sorted(sentence_scores.items(), key=itemgetter(1), reverse = True)[0:7])
+#print(top7)
+def Sort(sub_li):
+    return(sorted(sub_li, key = lambda sub_li: sub_li[1])) 
+sentence_summary = Sort(top7.values())
+summary = ""
+for value in sentence_summary:
+    for key in top7:
+        if top7[key] == value:
+            summary = summary + key
+print(summary)
