@@ -3,8 +3,8 @@ import urllib2
 import urlparse
 import sys
 import string
-from nltk import word_tokenize
-from nltk.corpus import stopwords
+#from nltk import word_tokenize
+#from nltk.corpus import stopwords
 reload(sys)
 sys.setdefaultencoding('utf8')
 rr = open('rr2')
@@ -18,7 +18,7 @@ d3 = d2.split('\n')
 o = {}
 g = 0
 dv = {}
-stop = set(stopwords.words('english'))
+#stop = set(stopwords.words('english'))
 for x in d3:
 #       try:
         try:
@@ -48,11 +48,11 @@ for x in d3:
                                         if o.has_key(v)==False:
                                                 o[v] = y
                                         for e in v.lower().split():
-                                                if e not in stop:
-                                                        if dv.has_key(e):
-                                                                dv[e] = dv[e]+1
-                                                        else:
-                                                                dv[e] = 1
+                                                #if e not in stop:
+                                                if dv.has_key(e):
+                                                        dv[e] = dv[e]+1
+                                                else:
+                                                        dv[e] = 1
                                                 
 
 s = open('rr8', 'w')
