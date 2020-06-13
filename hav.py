@@ -40,7 +40,9 @@ for x in d3:
                         else:
                                 continue
                         if t[0]=='':
-                                y = e[0]+'://'+e[1]+y
+                                try:
+                                    y = e[0]+'://'+e[1]+y
+                                except: continue
                         v = v.rstrip(' \n\t\0')
                         v = v.lstrip(' \n\t\0')
                         for x in rr:
@@ -48,13 +50,14 @@ for x in d3:
                                         if o.has_key(v)==False:
                                                 o[v] = y
                                         for e in v.lower().split():
-                                                #if e not in stop:
-                                                if dv.has_key(e):
-                                                        dv[e] = dv[e]+1
-                                                else:
-                                                        dv[e] = 1
-                                                
-
+                                                #print e
+ #                                               if e not in stop:
+                                                       #print e
+                                            if dv.has_key(e):
+                                                dv[e] = dv[e]+1
+                                            else:
+                                                dv[e] = 1
+r = ''
 s = open('rr8', 'w')
 for x in o.keys():
         r = r+'<a href="'+o[x]+'">'+x+'</a><br>'
