@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2020 at 09:21 AM
+-- Generation Time: Dec 17, 2020 at 03:34 PM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.31
 
@@ -24,12 +24,313 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `car`
+--
+
+CREATE TABLE `car` (
+  `id` int(10) NOT NULL,
+  `make` varchar(20) NOT NULL,
+  `model` varchar(20) NOT NULL,
+  `year` int(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `certification`
+--
+
+CREATE TABLE `certification` (
+  `id` int(100) NOT NULL,
+  `certification` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `certification`
+--
+
+INSERT INTO `certification` (`id`, `certification`) VALUES
+(1, 'POLICE'),
+(2, 'EMT'),
+(3, 'RADIO TECHNICIAN'),
+(4, 'RADIO OPERATOR');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `countrycod`
+--
+
+CREATE TABLE `countrycod` (
+  `id` int(10) NOT NULL,
+  `code` varchar(5) NOT NULL,
+  `country` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `countrycod`
+--
+
+INSERT INTO `countrycod` (`id`, `code`, `country`) VALUES
+(1, 'Afgha', 'AF'),
+(2, 'Ã…lan', 'AX'),
+(3, 'Alban', 'AL'),
+(4, 'Alger', 'DZ'),
+(5, 'Ameri', 'AS'),
+(6, 'Andor', 'AD'),
+(7, 'Angol', 'AO'),
+(8, 'Angui', 'AI'),
+(9, 'Antar', 'AQ'),
+(10, 'Antig', 'AG'),
+(11, 'Argen', 'AR'),
+(12, 'Armen', 'AM'),
+(13, 'Aruba', 'AW'),
+(14, 'Austr', 'AU'),
+(15, 'Austr', 'AT'),
+(16, 'Azerb', 'AZ'),
+(17, 'Baham', 'BS'),
+(18, 'Bahra', 'BH'),
+(19, 'Bangl', 'BD'),
+(20, 'Barba', 'BB'),
+(21, 'Belar', 'BY'),
+(22, 'Belgi', 'BE'),
+(23, 'Beliz', 'BZ'),
+(24, 'Benin', 'BJ'),
+(25, 'Bermu', 'BM'),
+(26, 'Bhuta', 'BT'),
+(27, 'Boliv', 'BO'),
+(28, 'Bonai', 'BQ'),
+(29, 'Bosni', 'BA'),
+(30, 'Botsw', 'BW'),
+(31, 'Bouve', 'BV'),
+(32, 'Brazi', 'BR'),
+(33, 'Briti', 'IO'),
+(34, 'Brune', 'BN'),
+(35, 'Bulga', 'BG'),
+(36, 'Burki', 'BF'),
+(37, 'Burun', 'BI'),
+(38, 'Cambo', 'KH'),
+(39, 'Camer', 'CM'),
+(40, 'Canad', 'CA'),
+(41, 'Cape ', 'CV'),
+(42, 'Cayma', 'KY'),
+(43, 'Centr', 'CF'),
+(44, 'Chad', 'TD'),
+(45, 'Chile', 'CL'),
+(46, 'China', 'CN'),
+(47, 'Chris', 'CX'),
+(48, 'Cocos', 'CC'),
+(49, 'Colom', 'CO'),
+(50, 'Comor', 'KM'),
+(51, 'Congo', 'CG'),
+(52, 'Congo', 'CD'),
+(53, 'Cook ', 'CK'),
+(54, 'Costa', 'CR'),
+(55, 'CÃ´te', 'CI'),
+(56, 'Croat', 'HR'),
+(57, 'Cuba', 'CU'),
+(58, 'CuraÃ', 'CW'),
+(59, 'Cypru', 'CY'),
+(60, 'Czech', 'CZ'),
+(61, 'Denma', 'DK'),
+(62, 'Djibo', 'DJ'),
+(63, 'Domin', 'DM'),
+(64, 'Domin', 'DO'),
+(65, 'Ecuad', 'EC'),
+(66, 'Egypt', 'EG'),
+(67, 'El Sa', 'SV'),
+(68, 'Equat', 'GQ'),
+(69, 'Eritr', 'ER'),
+(70, 'Eston', 'EE'),
+(71, 'Ethio', 'ET'),
+(72, 'Falkl', 'FK'),
+(73, 'Faroe', 'FO'),
+(74, 'Fiji', 'FJ'),
+(75, 'Finla', 'FI'),
+(76, 'Franc', 'FR'),
+(77, 'Frenc', 'GF'),
+(78, 'Frenc', 'PF'),
+(79, 'Frenc', 'TF'),
+(80, 'Gabon', 'GA'),
+(81, 'Gambi', 'GM'),
+(82, 'Georg', 'GE'),
+(83, 'Germa', 'DE'),
+(84, 'Ghana', 'GH'),
+(85, 'Gibra', 'GI'),
+(86, 'Greec', 'GR'),
+(87, 'Green', 'GL'),
+(88, 'Grena', 'GD'),
+(89, 'Guade', 'GP'),
+(90, 'Guam', 'GU'),
+(91, 'Guate', 'GT'),
+(92, 'Guern', 'GG'),
+(93, 'Guine', 'GN'),
+(94, 'Guine', 'GW'),
+(95, 'Guyan', 'GY'),
+(96, 'Haiti', 'HT'),
+(97, 'Heard', 'HM'),
+(98, 'Holy ', 'VA'),
+(99, 'Hondu', 'HN'),
+(100, 'Hong ', 'HK'),
+(101, 'Hunga', 'HU'),
+(102, 'Icela', 'IS'),
+(103, 'India', 'IN'),
+(104, 'Indon', 'ID'),
+(105, 'Iran,', 'IR'),
+(106, 'Iraq', 'IQ'),
+(107, 'Irela', 'IE'),
+(108, 'Isle ', 'IM'),
+(109, 'Israe', 'IL'),
+(110, 'Italy', 'IT'),
+(111, 'Jamai', 'JM'),
+(112, 'Japan', 'JP'),
+(113, 'Jerse', 'JE'),
+(114, 'Jorda', 'JO'),
+(115, 'Kazak', 'KZ'),
+(116, 'Kenya', 'KE'),
+(117, 'Kirib', 'KI'),
+(118, 'Korea', 'KP'),
+(119, 'Korea', 'KR'),
+(120, 'Kuwai', 'KW'),
+(121, 'Kyrgy', 'KG'),
+(122, 'Lao P', 'LA'),
+(123, 'Latvi', 'LV'),
+(124, 'Leban', 'LB'),
+(125, 'Lesot', 'LS'),
+(126, 'Liber', 'LR'),
+(127, 'Libya', 'LY'),
+(128, 'Liech', 'LI'),
+(129, 'Lithu', 'LT'),
+(130, 'Luxem', 'LU'),
+(131, 'Macao', 'MO'),
+(132, 'Maced', 'MK'),
+(133, 'Madag', 'MG'),
+(134, 'Malaw', 'MW'),
+(135, 'Malay', 'MY'),
+(136, 'Maldi', 'MV'),
+(137, 'Mali', 'ML'),
+(138, 'Malta', 'MT'),
+(139, 'Marsh', 'MH'),
+(140, 'Marti', 'MQ'),
+(141, 'Mauri', 'MR'),
+(142, 'Mauri', 'MU'),
+(143, 'Mayot', 'YT'),
+(144, 'Mexic', 'MX'),
+(145, 'Micro', 'FM'),
+(146, 'Moldo', 'MD'),
+(147, 'Monac', 'MC'),
+(148, 'Mongo', 'MN'),
+(149, 'Monte', 'ME'),
+(150, 'Monts', 'MS'),
+(151, 'Moroc', 'MA'),
+(152, 'Mozam', 'MZ'),
+(153, 'Myanm', 'MM'),
+(154, 'Namib', 'NA'),
+(155, 'Nauru', 'NR'),
+(156, 'Nepal', 'NP'),
+(157, 'Nethe', 'NL'),
+(158, 'New C', 'NC'),
+(159, 'New Z', 'NZ'),
+(160, 'Nicar', 'NI'),
+(161, 'Niger', 'NE'),
+(162, 'Niger', 'NG'),
+(163, 'Niue', 'NU'),
+(164, 'Norfo', 'NF'),
+(165, 'North', 'MP'),
+(166, 'Norwa', 'NO'),
+(167, 'Oman', 'OM'),
+(168, 'Pakis', 'PK'),
+(169, 'Palau', 'PW'),
+(170, 'Pales', 'PS'),
+(171, 'Panam', 'PA'),
+(172, 'Papua', 'PG'),
+(173, 'Parag', 'PY'),
+(174, 'Peru', 'PE'),
+(175, 'Phili', 'PH'),
+(176, 'Pitca', 'PN'),
+(177, 'Polan', 'PL'),
+(178, 'Portu', 'PT'),
+(179, 'Puert', 'PR'),
+(180, 'Qatar', 'QA'),
+(181, 'RÃ©un', 'RE'),
+(182, 'Roman', 'RO'),
+(183, 'Russi', 'RU'),
+(184, 'Rwand', 'RW'),
+(185, 'Saint', 'BL'),
+(186, 'Saint', 'SH'),
+(187, 'Saint', 'KN'),
+(188, 'Saint', 'LC'),
+(189, 'Saint', 'MF'),
+(190, 'Saint', 'PM'),
+(191, 'Saint', 'VC'),
+(192, 'Samoa', 'WS'),
+(193, 'San M', 'SM'),
+(194, 'Sao T', 'ST'),
+(195, 'Saudi', 'SA'),
+(196, 'Seneg', 'SN'),
+(197, 'Serbi', 'RS'),
+(198, 'Seych', 'SC'),
+(199, 'Sierr', 'SL'),
+(200, 'Singa', 'SG'),
+(201, 'Sint ', 'SX'),
+(202, 'Slova', 'SK'),
+(203, 'Slove', 'SI'),
+(204, 'Solom', 'SB'),
+(205, 'Somal', 'SO'),
+(206, 'South', 'ZA'),
+(207, 'South', 'GS'),
+(208, 'South', 'SS'),
+(209, 'Spain', 'ES'),
+(210, 'Sri L', 'LK'),
+(211, 'Sudan', 'SD'),
+(212, 'Surin', 'SR'),
+(213, 'Svalb', 'SJ'),
+(214, 'Swazi', 'SZ'),
+(215, 'Swede', 'SE'),
+(216, 'Switz', 'CH'),
+(217, 'Syria', 'SY'),
+(218, 'Taiwa', 'TW'),
+(219, 'Tajik', 'TJ'),
+(220, 'Tanza', 'TZ'),
+(221, 'Thail', 'TH'),
+(222, 'Timor', 'TL'),
+(223, 'Togo', 'TG'),
+(224, 'Tokel', 'TK'),
+(225, 'Tonga', 'TO'),
+(226, 'Trini', 'TT'),
+(227, 'Tunis', 'TN'),
+(228, 'Turke', 'TR'),
+(229, 'Turkm', 'TM'),
+(230, 'Turks', 'TC'),
+(231, 'Tuval', 'TV'),
+(232, 'Ugand', 'UG'),
+(233, 'Ukrai', 'UA'),
+(234, 'Unite', 'AE'),
+(235, 'Unite', 'GB'),
+(236, 'Unite', 'US'),
+(237, 'Unite', 'UM'),
+(238, 'Urugu', 'UY'),
+(239, 'Uzbek', 'UZ'),
+(240, 'Vanua', 'VU'),
+(241, 'Venez', 'VE'),
+(242, 'Viet ', 'VN'),
+(243, 'Virgi', 'VG'),
+(244, 'Virgi', 'VI'),
+(245, 'Walli', 'WF'),
+(246, 'Weste', 'EH'),
+(247, 'Yemen', 'YE'),
+(248, 'Zambi', 'ZM'),
+(249, 'Zimba', 'ZW');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `domain2url`
 --
 
 CREATE TABLE `domain2url` (
-`domainid` int(50) NOT NULL,
-`urlid` int(50) NOT NULL
+  `domainid` int(50) NOT NULL,
+  `urlid` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -39,11 +340,520 @@ CREATE TABLE `domain2url` (
 --
 
 CREATE TABLE `domains` (
-`id` int(50) NOT NULL,
-`url` varchar(250) NOT NULL
+  `id` int(50) NOT NULL,
+  `url` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
+
+--
+-- Table structure for table `driver`
+--
+
+CREATE TABLE `driver` (
+  `id` int(10) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `SMS` int(20) NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `driver2car`
+--
+
+CREATE TABLE `driver2car` (
+  `driverid` int(10) NOT NULL,
+  `userauthid` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `driver2certif`
+--
+
+CREATE TABLE `driver2certif` (
+  `driverid` int(10) NOT NULL,
+  `certifid` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `driver2userauth`
+--
+
+CREATE TABLE `driver2userauth` (
+  `driverid` int(10) NOT NULL,
+  `userauthid` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `languagecod`
+--
+
+CREATE TABLE `languagecod` (
+  `id` int(10) NOT NULL,
+  `code` varchar(5) NOT NULL,
+  `language` varchar(35) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `languagecod`
+--
+
+INSERT INTO `languagecod` (`id`, `code`, `language`) VALUES
+(1, 'alpha', 'English'),
+(2, 'aa', 'Afar'),
+(3, 'ab', 'Abkhazian'),
+(4, 'ae', 'Avestan'),
+(5, 'af', 'Afrikaans'),
+(6, 'ak', 'Akan'),
+(7, 'am', 'Amharic'),
+(8, 'an', 'Aragonese'),
+(9, 'ar', 'Arabic'),
+(10, 'as', 'Assamese'),
+(11, 'av', 'Avaric'),
+(12, 'ay', 'Aymara'),
+(13, 'az', 'Azerbaijani'),
+(14, 'ba', 'Bashkir'),
+(15, 'be', 'Belarusian'),
+(16, 'bg', 'Bulgarian'),
+(17, 'bh', 'Bihari languages'),
+(18, 'bi', 'Bislama'),
+(19, 'bm', 'Bambara'),
+(20, 'bn', 'Bengali'),
+(21, 'bo', 'Tibetan'),
+(22, 'br', 'Breton'),
+(23, 'bs', 'Bosnian'),
+(24, 'ca', 'Catalan; Valencian'),
+(25, 'ce', 'Chechen'),
+(26, 'ch', 'Chamorro'),
+(27, 'co', 'Corsican'),
+(28, 'cr', 'Cree'),
+(29, 'cs', 'Czech'),
+(30, 'cu', 'Church Slavic; Old Slavonic; Church'),
+(31, 'cv', 'Chuvash'),
+(32, 'cy', 'Welsh'),
+(33, 'da', 'Danish'),
+(34, 'de', 'German'),
+(35, 'dv', 'Divehi; Dhivehi; Maldivian'),
+(36, 'dz', 'Dzongkha'),
+(37, 'ee', 'Ewe'),
+(38, 'el', 'Greek, Modern (1453-)'),
+(39, 'en', 'English'),
+(40, 'eo', 'Esperanto'),
+(41, 'es', 'Spanish; Castilian'),
+(42, 'et', 'Estonian'),
+(43, 'eu', 'Basque'),
+(44, 'fa', 'Persian'),
+(45, 'ff', 'Fulah'),
+(46, 'fi', 'Finnish'),
+(47, 'fj', 'Fijian'),
+(48, 'fo', 'Faroese'),
+(49, 'fr', 'French'),
+(50, 'fy', 'Western Frisian'),
+(51, 'ga', 'Irish'),
+(52, 'gd', 'Gaelic; Scottish Gaelic'),
+(53, 'gl', 'Galician'),
+(54, 'gn', 'Guarani'),
+(55, 'gu', 'Gujarati'),
+(56, 'gv', 'Manx'),
+(57, 'ha', 'Hausa'),
+(58, 'he', 'Hebrew'),
+(59, 'hi', 'Hindi'),
+(60, 'ho', 'Hiri Motu'),
+(61, 'hr', 'Croatian'),
+(62, 'ht', 'Haitian; Haitian Creole'),
+(63, 'hu', 'Hungarian'),
+(64, 'hy', 'Armenian'),
+(65, 'hz', 'Herero'),
+(66, 'ia', 'Interlingua (International Auxiliar'),
+(67, 'id', 'Indonesian'),
+(68, 'ie', 'Interlingue; Occidental'),
+(69, 'ig', 'Igbo'),
+(70, 'ii', 'Sichuan Yi; Nuosu'),
+(71, 'ik', 'Inupiaq'),
+(72, 'io', 'Ido'),
+(73, 'is', 'Icelandic'),
+(74, 'it', 'Italian'),
+(75, 'iu', 'Inuktitut'),
+(76, 'ja', 'Japanese'),
+(77, 'jv', 'Javanese'),
+(78, 'ka', 'Georgian'),
+(79, 'kg', 'Kongo'),
+(80, 'ki', 'Kikuyu; Gikuyu'),
+(81, 'kj', 'Kuanyama; Kwanyama'),
+(82, 'kk', 'Kazakh'),
+(83, 'kl', 'Kalaallisut; Greenlandic'),
+(84, 'km', 'Central Khmer'),
+(85, 'kn', 'Kannada'),
+(86, 'ko', 'Korean'),
+(87, 'kr', 'Kanuri'),
+(88, 'ks', 'Kashmiri'),
+(89, 'ku', 'Kurdish'),
+(90, 'kv', 'Komi'),
+(91, 'kw', 'Cornish'),
+(92, 'ky', 'Kirghiz; Kyrgyz'),
+(93, 'la', 'Latin'),
+(94, 'lb', 'Luxembourgish; Letzeburgesch'),
+(95, 'lg', 'Ganda'),
+(96, 'li', 'Limburgan; Limburger; Limburgish'),
+(97, 'ln', 'Lingala'),
+(98, 'lo', 'Lao'),
+(99, 'lt', 'Lithuanian'),
+(100, 'lu', 'Luba-Katanga'),
+(101, 'lv', 'Latvian'),
+(102, 'mg', 'Malagasy'),
+(103, 'mh', 'Marshallese'),
+(104, 'mi', 'Maori'),
+(105, 'mk', 'Macedonian'),
+(106, 'ml', 'Malayalam'),
+(107, 'mn', 'Mongolian'),
+(108, 'mr', 'Marathi'),
+(109, 'ms', 'Malay'),
+(110, 'mt', 'Maltese'),
+(111, 'my', 'Burmese'),
+(112, 'na', 'Nauru'),
+(113, 'nb', 'Bokmål, Norwegian; Norwegian Bokmål'),
+(114, 'nd', 'Ndebele, North; North Ndebele'),
+(115, 'ne', 'Nepali'),
+(116, 'ng', 'Ndonga'),
+(117, 'nl', 'Dutch; Flemish'),
+(118, 'nn', 'Norwegian Nynorsk; Nynorsk, Norwegi'),
+(119, 'no', 'Norwegian'),
+(120, 'nr', 'Ndebele, South; South Ndebele'),
+(121, 'nv', 'Navajo; Navaho'),
+(122, 'ny', 'Chichewa; Chewa; Nyanja'),
+(123, 'oc', 'Occitan (post 1500)'),
+(124, 'oj', 'Ojibwa'),
+(125, 'om', 'Oromo'),
+(126, 'or', 'Oriya'),
+(127, 'os', 'Ossetian; Ossetic'),
+(128, 'pa', 'Panjabi; Punjabi'),
+(129, 'pi', 'Pali'),
+(130, 'pl', 'Polish'),
+(131, 'ps', 'Pushto; Pashto'),
+(132, 'pt', 'Portuguese'),
+(133, 'qu', 'Quechua'),
+(134, 'rm', 'Romansh'),
+(135, 'rn', 'Rundi'),
+(136, 'ro', 'Romanian; Moldavian; Moldovan'),
+(137, 'ru', 'Russian'),
+(138, 'rw', 'Kinyarwanda'),
+(139, 'sa', 'Sanskrit'),
+(140, 'sc', 'Sardinian'),
+(141, 'sd', 'Sindhi'),
+(142, 'se', 'Northern Sami'),
+(143, 'sg', 'Sango'),
+(144, 'si', 'Sinhala; Sinhalese'),
+(145, 'sk', 'Slovak'),
+(146, 'sl', 'Slovenian'),
+(147, 'sm', 'Samoan'),
+(148, 'sn', 'Shona'),
+(149, 'so', 'Somali'),
+(150, 'sq', 'Albanian'),
+(151, 'sr', 'Serbian'),
+(152, 'ss', 'Swati'),
+(153, 'st', 'Sotho, Southern'),
+(154, 'su', 'Sundanese'),
+(155, 'sv', 'Swedish'),
+(156, 'sw', 'Swahili'),
+(157, 'ta', 'Tamil'),
+(158, 'te', 'Telugu'),
+(159, 'tg', 'Tajik'),
+(160, 'th', 'Thai'),
+(161, 'ti', 'Tigrinya'),
+(162, 'tk', 'Turkmen'),
+(163, 'tl', 'Tagalog'),
+(164, 'tn', 'Tswana'),
+(165, 'to', 'Tonga (Tonga Islands)'),
+(166, 'tr', 'Turkish'),
+(167, 'ts', 'Tsonga'),
+(168, 'tt', 'Tatar'),
+(169, 'tw', 'Twi'),
+(170, 'ty', 'Tahitian'),
+(171, 'ug', 'Uighur; Uyghur'),
+(172, 'uk', 'Ukrainian'),
+(173, 'ur', 'Urdu'),
+(174, 'uz', 'Uzbek'),
+(175, 've', 'Venda'),
+(176, 'vi', 'Vietnamese'),
+(177, 'vo', 'Volapük'),
+(178, 'wa', 'Walloon'),
+(179, 'wo', 'Wolof'),
+(180, 'xh', 'Xhosa'),
+(181, 'yi', 'Yiddish'),
+(182, 'yo', 'Yoruba'),
+(183, 'za', 'Zhuang; Chuang'),
+(184, 'zh', 'Chinese'),
+(185, 'zu', 'Zulu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `query2language`
+--
+
+CREATE TABLE `query2language` (
+  `queryid` int(20) NOT NULL,
+  `languageid` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `queryterm`
+--
+
+CREATE TABLE `queryterm` (
+  `id` int(20) NOT NULL,
+  `term` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscriber`
+--
+
+CREATE TABLE `subscriber` (
+  `id` int(10) NOT NULL,
+  `firstname` varchar(30) NOT NULL,
+  `lastname` varchar(30) NOT NULL,
+  `SMS` int(20) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscriber2country`
+--
+
+CREATE TABLE `subscriber2country` (
+  `subscriberid` int(10) NOT NULL,
+  `countryid` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscriber2query`
+--
+
+CREATE TABLE `subscriber2query` (
+  `subscriberid` int(10) NOT NULL,
+  `queryid` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscriber2userauth`
+--
+
+CREATE TABLE `subscriber2userauth` (
+  `subsid` int(10) NOT NULL,
+  `userauthid` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `time`
+--
+
+CREATE TABLE `time` (
+  `id` int(20) NOT NULL,
+  `tid` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `time2url`
+--
+
+CREATE TABLE `time2url` (
+  `timeid` int(50) NOT NULL,
+  `urlid` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `url`
+--
+
+CREATE TABLE `url` (
+  `id` int(20) NOT NULL,
+  `headline` varchar(250) NOT NULL,
+  `url` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userauth`
+--
+
+CREATE TABLE `userauth` (
+  `id` int(10) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `passw` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `car`
+--
+ALTER TABLE `car`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `certification`
+--
+ALTER TABLE `certification`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `countrycod`
+--
+ALTER TABLE `countrycod`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `domains`
+--
+ALTER TABLE `domains`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `driver`
+--
+ALTER TABLE `driver`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `languagecod`
+--
+ALTER TABLE `languagecod`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `queryterm`
+--
+ALTER TABLE `queryterm`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `subscriber`
+--
+ALTER TABLE `subscriber`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `time`
+--
+ALTER TABLE `time`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `url`
+--
+ALTER TABLE `url`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `userauth`
+--
+ALTER TABLE `userauth`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `car`
+--
+ALTER TABLE `car`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `certification`
+--
+ALTER TABLE `certification`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `countrycod`
+--
+ALTER TABLE `countrycod`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
+
+--
+-- AUTO_INCREMENT for table `domains`
+--
+ALTER TABLE `domains`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `driver`
+--
+ALTER TABLE `driver`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `languagecod`
+--
+ALTER TABLE `languagecod`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=186;
+
+--
+-- AUTO_INCREMENT for table `queryterm`
+--
+ALTER TABLE `queryterm`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `subscriber`
+--
+ALTER TABLE `subscriber`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `time`
+--
+ALTER TABLE `time`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `url`
+--
+ALTER TABLE `url`
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `userauth`
+--
+ALTER TABLE `userauth`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
 --
 -- Table structure for table `time`
