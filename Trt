@@ -1,0 +1,3 @@
+for /f %%A in (f3.txt) do (
+tracert  -h 5 %%A
+) >> traceout3.txt
